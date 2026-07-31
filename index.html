@@ -64,6 +64,7 @@ a{color:inherit;text-decoration:none;}
 }
 .socials a:hover{opacity:.55; transform:translateY(-1px);}
 .socials svg{width:26px; height:26px;}
+.socials .soc-room{font-weight:900; font-size:.82rem; letter-spacing:.02em;}
 
 /* ---------- キャッチ ---------- */
 .pitch{
@@ -91,9 +92,8 @@ a{color:inherit;text-decoration:none;}
   background:var(--chip); color:var(--ink); font-weight:900; font-size:1.35rem; line-height:1;
 }
 .row__ic svg{width:24px; height:24px;}
-/* ブランドアイコン（判別しやすいよう各社カラーで） */
-.row__ic.ic-amazon{background:#232f3e;}
-.row__ic.ic-rakuten{background:#bf0000; color:#fff;}
+/* ブランドアイコン（モノトーンで統一。文字ロゴは小さめに） */
+.row__ic.ic-room{font-size:.72rem; letter-spacing:.03em;}
 .row__tx{min-width:0; flex:1;}
 .row__tx b{display:block; font-size:1.02rem; font-weight:800; line-height:1.35; text-wrap:pretty;}
 .row__tx span{display:block; font-size:.8rem; color:var(--ink-soft); margin-top:2px; line-height:1.45; text-wrap:pretty;}
@@ -170,7 +170,7 @@ a{color:inherit;text-decoration:none;}
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.1 3c.32 2.16 1.62 3.63 3.9 3.86v2.55c-1.36.1-2.62-.31-3.9-1.05v5.98c0 3.02-2.2 5.16-5.05 5.16-2.86 0-5.05-2.14-5.05-5.16 0-2.86 2.19-4.9 4.98-4.9.28 0 .55.02.82.06v2.66c-.26-.08-.53-.12-.82-.12-1.34 0-2.36 1.03-2.36 2.3s1.02 2.3 2.36 2.3c1.4 0 2.49-1.05 2.49-2.7V3z"/></svg>
       </a>
       <a href="https://room.rakuten.co.jp/yuto_skill/items" target="_blank" rel="noopener sponsored nofollow" aria-label="楽天ROOM">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.2 8h11.6l-1 11.2a1.5 1.5 0 0 1-1.5 1.3H8.7a1.5 1.5 0 0 1-1.5-1.3z"/><path d="M9 8V6.4a3 3 0 0 1 6 0V8"/></svg>
+        <span class="soc-room" aria-hidden="true">ROOM</span>
       </a>
     </nav>
   </header>
@@ -179,16 +179,16 @@ a{color:inherit;text-decoration:none;}
     <b>「これ、もっと早く買えばよかった」</b>を、なくす。</p>
 
   <!-- ===== SHOP ===== -->
-  <p class="lbl">Shop ・ おすすめ商品</p>
+  <p class="lbl">Shop ・ おすすめアイテム</p>
 
   <a class="row" href="https://room.rakuten.co.jp/yuto_skill/items" target="_blank" rel="noopener sponsored nofollow">
-    <span class="row__ic ic-rakuten" aria-hidden="true">R</span>
+    <span class="row__ic ic-room" aria-hidden="true">ROOM</span>
     <span class="row__tx"><b>楽天ROOM</b><span>インスタで紹介した時短アイテム一覧</span></span>
     <span class="row__ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
   </a>
 
   <a class="row" href="https://www.amazon.co.jp/shop/yuto_skill" target="_blank" rel="noopener sponsored nofollow">
-    <span class="row__ic ic-amazon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 14.4c2.7 2 5.9 3 9.1 3 2.3 0 4.6-.5 6.6-1.5" stroke="#FF9900" stroke-width="2.1" stroke-linecap="round"/><path d="M17.4 13.5c.75-.22 2.1-.32 2.5.12.42.46.12 1.9-.3 2.75" stroke="#FF9900" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+    <span class="row__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 14.4c2.7 2 5.9 3 9.1 3 2.3 0 4.6-.5 6.6-1.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><path d="M17.4 13.5c.75-.22 2.1-.32 2.5.12.42.46.12 1.9-.3 2.75" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span>
     <span class="row__tx"><b>Amazonストア</b><span>愛用ガジェットをまとめてチェック</span></span>
     <span class="row__ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
   </a>
@@ -200,7 +200,7 @@ a{color:inherit;text-decoration:none;}
   </a>
 
   <!-- ===== REVIEW（実際に使ったガジェット / 自動更新） ===== -->
-  <p class="lbl">Review ・ 実際に使ったガジェット</p>
+  <p class="lbl">Review ・ 動画で紹介したアイテム</p>
   <div class="rev-grid">
 <!-- AUTO_LATEST_START -->
       <a class="rev reveal" href="https://www.amazon.co.jp/dp/B0FBRJVLDT?tag=yutoskill-22" target="_blank" rel="noopener sponsored nofollow">
