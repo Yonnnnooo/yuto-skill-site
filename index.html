@@ -210,6 +210,45 @@ h2.title{font-size:var(--fs-h2); font-weight:900; line-height:1.25; letter-spaci
 .footer__links{display:flex; gap:var(--s3); flex-wrap:wrap;}
 .footer__disc{border-top:1px solid #232b38; margin-top:var(--s4); padding-top:var(--s3); font-size:.9rem; color:#8b93a1; line-height:1.8;}
 .footer__copy{margin-top:var(--s3); font-size:.85rem; color:#6b7280;}
+
+/* =========================================================
+   MOBILE-FIRST 仕上げ（スマホ最優先 / Instagram流入の受け皿）
+   ※ PC表示(≥641px)には一切影響しない
+   ========================================================= */
+@media (max-width:640px){
+  /* ファーストビューを引き締める（最初の1画面で価値が伝わる余白に） */
+  .hero{padding-block:var(--s5) var(--s5);}
+  .hero .lead br{display:none;}                 /* スマホは自然な折り返しに任せる */
+  .hero__cta{flex-direction:column; align-items:stretch;}
+  .hero__cta .btn{width:100%;}
+  .hero__badges{gap:var(--s3);}
+  .hero__badge{flex:1 1 28%;}
+  .hero__badge b{font-size:1.5rem;}
+  .hero__badge span{font-size:.82rem;}
+  /* 指で押しやすいタップ領域(最低48px)を全ボタンに保証 */
+  .btn{min-height:48px; display:inline-flex; align-items:center; justify-content:center;}
+  /* SNS/ショップ導線は縦積みで押しやすく */
+  .shop{padding:var(--s3);}
+  /* 追従CTAバーに隠れないよう下に余白 */
+  body{padding-bottom:74px;}
+}
+
+/* 追従CTAバー：スクロール中も常に「次の一手」を提示（スマホ専用） */
+.mobile-cta{display:none;}
+@media (max-width:640px){
+  .mobile-cta{
+    display:flex; position:fixed; left:0; right:0; bottom:0; z-index:60; gap:8px;
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(255,255,255,.94); backdrop-filter:blur(8px);
+    border-top:1px solid var(--line); box-shadow:0 -4px 20px rgba(20,24,31,.10);
+  }
+  .mobile-cta a{
+    flex:1; min-height:48px; border-radius:999px; font-weight:800; font-size:1rem;
+    display:inline-flex; align-items:center; justify-content:center; text-align:center;
+  }
+  .mobile-cta .m-primary{background:var(--brand); color:#fff;}
+  .mobile-cta .m-insta{background:#fff; color:var(--ink); border:2px solid var(--line);}
+}
 </style>
 </head>
 <body>
@@ -457,6 +496,12 @@ h2.title{font-size:var(--fs-h2); font-weight:900; line-height:1.25; letter-spaci
 </footer>
 
 <!-- ===== ここまでで全7セクション完成 ===== -->
+
+<!-- 追従CTAバー（スマホ専用。PCでは非表示） -->
+<div class="mobile-cta" aria-label="クイックナビ">
+  <a class="m-primary" href="#gadgets">おすすめを見る</a>
+  <a class="m-insta" href="https://www.instagram.com/yuto_skill/" target="_blank" rel="noopener">Instagram</a>
+</div>
 
 <script>
 /* reveal-on-scroll */
