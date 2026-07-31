@@ -24,8 +24,8 @@
   --ink-soft:#8a8a8f;  /* 補助グレー */
   --line:#e3e3e7;
   --chip:#f3f3f5;      /* アイコン下地 */
-  --radius:18px;
-  --radius-s:14px;
+  --radius:11px;
+  --radius-s:10px;
   --shadow:0 1px 2px rgba(0,0,0,.04), 0 6px 18px rgba(0,0,0,.05);
   --shadow-h:0 4px 12px rgba(0,0,0,.06), 0 14px 34px rgba(0,0,0,.10);
   --col:456px;         /* 中央カラム幅 */
@@ -56,15 +56,14 @@ a{color:inherit;text-decoration:none;}
 .pf__bio{color:var(--ink-mid); font-size:.92rem; margin-top:7px; line-height:1.7; text-wrap:pretty;}
 .pf__bio b{color:var(--ink); font-weight:700;}
 
-/* ---------- SNSアイコン列 ---------- */
-.socials{display:flex; justify-content:center; gap:12px; margin-top:18px;}
+/* ---------- SNSアイコン列（プレーンなグリフ。丸ボタンにしない） ---------- */
+.socials{display:flex; justify-content:center; gap:24px; margin-top:20px;}
 .socials a{
-  width:46px; height:46px; border-radius:50%; background:var(--card);
-  border:1px solid var(--line); display:grid; place-items:center;
-  color:var(--ink); box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .15s ease;
+  display:grid; place-items:center; color:var(--ink);
+  padding:4px; transition:opacity .15s ease, transform .15s ease;
 }
-.socials a:hover{transform:translateY(-2px); box-shadow:var(--shadow-h);}
-.socials svg{width:21px; height:21px;}
+.socials a:hover{opacity:.55; transform:translateY(-1px);}
+.socials svg{width:26px; height:26px;}
 
 /* ---------- キャッチ ---------- */
 .pitch{
@@ -88,10 +87,13 @@ a{color:inherit;text-decoration:none;}
 }
 .row:hover{transform:translateY(-2px); box-shadow:var(--shadow-h);}
 .row__ic{
-  width:48px; height:48px; border-radius:13px; flex:none; display:grid; place-items:center;
-  background:var(--chip); color:var(--ink);
+  width:48px; height:48px; border-radius:9px; flex:none; display:grid; place-items:center;
+  background:var(--chip); color:var(--ink); font-weight:900; font-size:1.35rem; line-height:1;
 }
 .row__ic svg{width:24px; height:24px;}
+/* ブランドアイコン（判別しやすいよう各社カラーで） */
+.row__ic.ic-amazon{background:#232f3e;}
+.row__ic.ic-rakuten{background:#bf0000; color:#fff;}
 .row__tx{min-width:0; flex:1;}
 .row__tx b{display:block; font-size:1.02rem; font-weight:800; line-height:1.35; text-wrap:pretty;}
 .row__tx span{display:block; font-size:.8rem; color:var(--ink-soft); margin-top:2px; line-height:1.45; text-wrap:pretty;}
@@ -124,13 +126,13 @@ a{color:inherit;text-decoration:none;}
 .optin p{font-size:.82rem; color:var(--ink-soft); margin-top:8px; line-height:1.7;}
 .optin form{display:flex; flex-direction:column; gap:10px; margin-top:15px;}
 .optin input{
-  padding:13px 16px; border-radius:12px; border:1px solid var(--line);
+  padding:13px 16px; border-radius:9px; border:1px solid var(--line);
   background:#f7f7f9; font:inherit; font-size:.95rem; width:100%;
 }
 .optin__merits{display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:12px; font-size:.72rem; color:var(--ink-soft);}
 .btn-dark{
   display:flex; align-items:center; justify-content:center; min-height:50px;
-  background:var(--ink); color:#fff; border:0; border-radius:12px;
+  background:var(--ink); color:#fff; border:0; border-radius:9px;
   font:inherit; font-weight:800; font-size:1rem; cursor:pointer;
   transition:opacity .15s ease, transform .15s ease;
 }
@@ -177,16 +179,16 @@ a{color:inherit;text-decoration:none;}
     <b>「これ、もっと早く買えばよかった」</b>を、なくす。</p>
 
   <!-- ===== SHOP ===== -->
-  <p class="lbl">Shop ・ 収益リンク</p>
+  <p class="lbl">Shop ・ おすすめ商品</p>
 
   <a class="row" href="https://room.rakuten.co.jp/yuto_skill/items" target="_blank" rel="noopener sponsored nofollow">
-    <span class="row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.2 8h11.6l-1 11.2a1.5 1.5 0 0 1-1.5 1.3H8.7a1.5 1.5 0 0 1-1.5-1.3z"/><path d="M9 8V6.4a3 3 0 0 1 6 0V8"/></svg></span>
+    <span class="row__ic ic-rakuten" aria-hidden="true">R</span>
     <span class="row__tx"><b>楽天ROOM</b><span>インスタで紹介した時短アイテム一覧</span></span>
     <span class="row__ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
   </a>
 
   <a class="row" href="https://www.amazon.co.jp/shop/yuto_skill" target="_blank" rel="noopener sponsored nofollow">
-    <span class="row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 7.2 12 3l8.8 4.2L12 11.4z"/><path d="M3.2 7.2v9.6L12 21l8.8-4.2V7.2"/><path d="M12 11.4V21"/></svg></span>
+    <span class="row__ic ic-amazon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 14.4c2.7 2 5.9 3 9.1 3 2.3 0 4.6-.5 6.6-1.5" stroke="#FF9900" stroke-width="2.1" stroke-linecap="round"/><path d="M17.4 13.5c.75-.22 2.1-.32 2.5.12.42.46.12 1.9-.3 2.75" stroke="#FF9900" stroke-width="2.1" stroke-linecap="round"/></svg></span>
     <span class="row__tx"><b>Amazonストア</b><span>愛用ガジェットをまとめてチェック</span></span>
     <span class="row__ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
   </a>
